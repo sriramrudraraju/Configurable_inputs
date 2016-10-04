@@ -7,14 +7,6 @@ version 0.15.1.
   * npm install
   * bower install
   
-##Sass Enabled
-
-Download Ruby from [Ruby](http://rubyinstaller.org/)
-
-add installed ruby to your path variable.(if not automatically done)
-
-  * gem install compass
-  * gem install sass
 
 ## Build & development
 
