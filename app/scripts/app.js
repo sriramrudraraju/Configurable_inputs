@@ -17,7 +17,7 @@
     .config(function($stateProvider, $urlRouterProvider){
 
       // For any unmatched url, send to /route1
-      $urlRouterProvider.otherwise("/Home");
+      $urlRouterProvider.otherwise("/Create");
 
       $stateProvider
         .state('Create', {

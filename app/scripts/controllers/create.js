@@ -8,7 +8,11 @@
     $scope.lol = 'lol';
 
     $scope.inputConfig= {};
-    
+
+    //toastr settings
+    toastr.options.closeMethod = 'fadeOut';
+    toastr.options.closeDuration = 300;
+    toastr.options.closeEasing = 'swing';
 
     $scope.addInput = function(data){
       //send this data to factory to append to array of inputs
@@ -22,6 +26,8 @@
         show: data.showValue,
         disabled: data.disabledValue
       });
+
+      toastr.success('Input added to list')
     }
 
   }
