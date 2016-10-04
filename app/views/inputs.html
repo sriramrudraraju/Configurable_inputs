@@ -1,0 +1,46 @@
+<div class="col-md-12">
+  <h1>Designed Input fields</h1>
+  <hr/>
+</div>
+
+<div class="col-md-12">
+  <div ng-repeat="field in fields">
+    <div ng-switch="field.type">
+      <div ng-switch-when="text" class="{{field.classs}}">
+        <form name="form" ng-show="field.show">
+          <div layout="row">
+            <md-input-container flex="100">
+              <label>{{field.name}}</label>
+              <input type="{{field.type}}"
+                     ng-model="value[$index]"
+                     ng-required="field.required"
+                     ng-pattern="field.pattern"
+                     ng-disabled="field.disabled">
+              <div ng-messages="form.$error">
+                <div ng-message="required">This is required.</div>
+                <div ng-message="pattern">{{field.patternMessage}}</div>
+              </div>
+            </md-input-container>
+          </div>
+        </form>
+      </div>
+      <div ng-switch-when="number" class="{{field.classs}}">
+        <form name="form" ng-show="field.show">
+          <div layout="row">
+            <md-input-container flex="100">
+              <label>{{field.name}}</label>
+              <input type="{{field.type}}"
+                     ng-model="value[$index]"
+                     ng-required="field.required"
+                     ng-disabled="field.disabled">
+              <div ng-messages="form.$error">
+                <div ng-message="required">This is required.</div>
+              </div>
+            </md-input-container>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+

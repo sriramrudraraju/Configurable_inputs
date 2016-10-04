@@ -11,7 +11,8 @@
       'ngMaterial',
       'ngMessages',
       'ui.router',
-      'service'
+      'service',
+      'directives'
     ])
     .config(function($stateProvider, $urlRouterProvider){
 
@@ -19,10 +20,15 @@
       $urlRouterProvider.otherwise("/Home");
 
       $stateProvider
-        .state('Home', {
-          url: "/Home",
-          templateUrl: "views/main.html",
-          controller: 'MainCtrl',
+        .state('Create', {
+          url: "/Create",
+          templateUrl: "views/create.html",
+          controller: 'CreateCtrl',
+        })
+        .state('Inputs', {
+          url: "/Inputs",
+          templateUrl: "views/inputs.html",
+          controller: 'InputsCtrl',
         })
         .state('About', {
           url: "/About",

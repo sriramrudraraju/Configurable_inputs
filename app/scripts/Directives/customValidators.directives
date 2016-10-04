@@ -1,0 +1,30 @@
+'use strict';
+
+(function() {
+  angular.module('directives', [])
+    .directive('customValidators', customValidators);
+
+
+
+  function customValidators() {
+    return {
+      restrict: 'A',
+      require: 'ngModel',
+      link: function (scope, element, attr, ngModelCtrl) {
+        var boolean = attr.customValidators;
+        // function to return only numbers
+        function fromUser(text) {
+          return text;
+        }
+        if(boolean == "true"){
+          // validating for required fied..
+          ngModelCtrl.$validators.required = function(modelValue) {
+            return modelValue ? true : false;
+          }
+        }
+        ngModelCtrl.$parsers.push(fromUser);
+      }
+    };
+  };
+
+})();
