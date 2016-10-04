@@ -8,7 +8,8 @@
       'ngResource',
       'ngRoute',
       'ngSanitize',
-      'ngTouch',
+      'ngMaterial',
+      'ngMessages',
       'ui.router',
       'service'
     ])

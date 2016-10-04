@@ -6,12 +6,12 @@
 
   function MainCtrl($scope,UserService) {
     $scope.lol = 'lol';
-    
-        UserService.getUsers()
-        .then(function(res) {
-          $scope.users = res;
-        }, function(err) {
-          console.log(err);
-        });
+
+        // UserService.getUsers()
+        // .then(function(res) {
+        //   $scope.users = res;
+        // }, function(err) {
+        //   console.log(err);
+        // });
   }
 })();
