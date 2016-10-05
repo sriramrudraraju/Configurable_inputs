@@ -27,7 +27,7 @@
         disabled: data.disabledValue
       });
 
-      toastr.success('Input added to list')
+      toastr.success('Input added to list');
     }
 
   }

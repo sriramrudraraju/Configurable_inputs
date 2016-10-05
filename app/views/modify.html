@@ -3,7 +3,7 @@
   <hr/>
 </div>
 
-<div class="col-md-12">
+<div class="col-md-12" >
   <table class="table">
     <thead>
     <tr>
@@ -13,8 +13,8 @@
       <th>Disable</th>
     </tr>
     </thead>
-    <tbody>
-    <tr ng-repeat="field in inputFields">
+    <tbody >
+    <tr ng-repeat="field in inputFields" >
       <th scope="row">{{field.name}}</th>
       <td>
         <md-checkbox ng-model="field.show" aria-label="Checkbox 1"></md-checkbox>
@@ -28,7 +28,8 @@
     </tr>
     </tbody>
   </table>
+  <div>
+    <md-button class="md-raised" ng-click="applyChanges(inputFields)">Apply Changes</md-button>
+  </div>
 </div>
-<div>
-  <md-button class="md-raised" ng-click="applyChanges(inputFields)">Apply Changes</md-button>
-</div>
+
