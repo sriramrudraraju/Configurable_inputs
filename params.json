@@ -1,0 +1,6 @@
+{
+  "name": "Configurable inputs",
+  "tagline": "",
+  "body": "# Angular Seed with karma-jasmine and Sass\r\n\r\nThis project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)\r\nversion 0.15.1.\r\n\r\n  * clone it\r\n  * npm install\r\n  * bower install\r\n  \r\n\r\n## Build & development\r\n\r\nRun `grunt` for building and `grunt serve` for preview.\r\n\r\n## Testing\r\n\r\nRunning `grunt test` will run the unit tests with karma.\r\n\r\n##AngularUI Router Enabled\r\n\r\nfind the detailed documentation [here](https://github.com/angular-ui/ui-router)\r\n\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
