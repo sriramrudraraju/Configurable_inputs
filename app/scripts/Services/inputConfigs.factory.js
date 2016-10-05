@@ -55,7 +55,6 @@
 
 
   self.getConvertedPatternVal = function() {
-    debugger;
       for(var i=0; i<self.length; i++){
         //convert only when pattern is available
         if(self[i].pattern){
