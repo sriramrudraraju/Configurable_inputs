@@ -30,7 +30,6 @@
             <input name="inputPattern" ng-model="inputConfig.inputPatternMessage">
           </md-input-container>
 
-
           <md-input-container class="md-block">
             <label>Bootstrap class</label>
             <md-select name="type" ng-model="inputConfig.classs" required="">
@@ -49,7 +48,6 @@
             </md-select>
           </md-input-container>
 
-
           <div layout-wrap="" layout-gt-sm="row">
             <div flex-gt-sm="50">
               <md-checkbox ng-model="inputConfig.requiredValue" aria-label="Checkbox 1">
@@ -61,7 +59,7 @@
 
           <div layout-wrap="" layout-gt-sm="row">
             <div flex-gt-sm="50">
-              <md-checkbox ng-model="inputConfig.showValue" aria-label="Checkbox 2">
+              <md-checkbox ng-model="inputConfig.showValue" ng-init="inputConfig.showValue = true" aria-label="Checkbox 2">
                 Show
               </md-checkbox>
             </div>
@@ -83,20 +81,18 @@
             </md-select>
           </md-input-container>
 
-
-
           <div>
-            <md-button class="md-raised" ng-click="addInput(inputConfig)">Add this input</md-button>
+            <md-button class="md-raised" ng-click="addInput(inputConfig)" ng-disabled="projectForm.$invalid">Add this input</md-button>
           </div>
 
         </form>
       </md-content>
 
-    </div></div>
+    </div>
+  </div>
   <div class="col-md-6">
     <!--preview side-->
     <h2>Preview</h2>
-    <br/><br/><br/>
     <div ng-switch="inputConfig.inputType">
       <div ng-switch-when="text" class="{{inputConfig.classs}}">
         <form name="form" ng-show="inputConfig.showValue">
@@ -104,12 +100,11 @@
             <md-input-container flex="100">
               <label>{{inputConfig.inputName}}</label>
               <input type="{{inputConfig.inputType}}"
-                     ng-pattern="{{inputConfig.inputPattern}}"
+                     ng-model="test"
                      ng-required="{{ inputConfig.requiredValue }}"
                      ng-disabled="inputConfig.disabledValue">
               <div ng-messages="form.$error">
                 <div ng-message="required">This is required.</div>
-                <div ng-message="pattern">ksjdfhkjsdhfk.</div>
               </div>
             </md-input-container>
           </div>
@@ -121,6 +116,7 @@
             <md-input-container flex="100">
               <label>{{inputConfig.inputName}}</label>
               <input type="{{inputConfig.inputType}}"
+                     ng-model="test"
                      ng-required="{{ inputConfig.requiredValue }}"
                      ng-disabled="inputConfig.disabledValue">
               <div ng-messages="form.$error">

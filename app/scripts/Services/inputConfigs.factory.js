@@ -54,7 +54,7 @@
 
 
 
-  self.getVal = function() {
+  self.getConvertedPatternVal = function() {
       for(var i=0; i<self.length; i++){
         //convert only when pattern is available
         if(self[i].pattern){
@@ -64,8 +64,16 @@
       return self;
     }
 
+    self.getVal = function() {
+      return self;
+    }
+
     self.addVal = function(val) {
       self.push(val);
+    }
+
+    self.updateVal = function(val) {
+      self = val;
     }
 
     return self;

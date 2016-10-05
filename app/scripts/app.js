@@ -30,10 +30,10 @@
           templateUrl: "views/inputs.html",
           controller: 'InputsCtrl',
         })
-        .state('About', {
-          url: "/About",
-          templateUrl: "views/about.html",
-          controller: 'AboutCtrl',
+        .state('Modify', {
+          url: "/Modify",
+          templateUrl: "views/modify.html",
+          controller: 'ModifyCtrl',
         });
     });
 

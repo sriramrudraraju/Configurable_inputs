@@ -11,6 +11,6 @@
 
     $scope.value= [];
 
-    $scope.fields = inputConfigsFactory.getVal();
+    $scope.fields = inputConfigsFactory.getConvertedPatternVal();
   }
 })();
