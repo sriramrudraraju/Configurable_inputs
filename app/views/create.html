@@ -93,9 +93,9 @@
   <div class="col-md-6">
     <!--preview side-->
     <h2>Preview</h2>
-    <div ng-switch="inputConfig.inputType">
+    <div ng-switch="inputConfig.inputType" ng-show="inputConfig.showValue">
       <div ng-switch-when="text" class="{{inputConfig.classs}}">
-        <form name="form" ng-show="inputConfig.showValue">
+        <form name="form">
           <div layout="row">
             <md-input-container flex="100">
               <label>{{inputConfig.inputName}}</label>

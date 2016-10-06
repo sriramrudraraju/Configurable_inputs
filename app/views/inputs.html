@@ -5,9 +5,9 @@
 
 <div class="col-md-12">
   <div ng-repeat="field in fields">
-    <div ng-switch="field.type">
+    <div ng-switch="field.type" ng-show="field.show">
       <div ng-switch-when="text" class="{{field.classs}}">
-        <form name="form" ng-show="field.show">
+        <form name="form">
           <div layout="row">
             <md-input-container flex="100">
               <label>{{field.name}}</label>
@@ -25,7 +25,7 @@
         </form>
       </div>
       <div ng-switch-when="number" class="{{field.classs}}">
-        <form name="form" ng-show="field.show">
+        <form name="form">
           <div layout="row">
             <md-input-container flex="100">
               <label>{{field.name}}</label>
