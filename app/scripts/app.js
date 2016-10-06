@@ -12,7 +12,8 @@
       'ngMessages',
       'ui.router',
       'service',
-      'directives'
+      'directives',
+      'dndLists'
     ])
     .config(function($stateProvider, $urlRouterProvider){
 
@@ -34,7 +35,12 @@
           url: "/Modify",
           templateUrl: "views/modify.html",
           controller: 'ModifyCtrl',
-        });
+        }) 
+        .state('BasicDnD', {
+        url: "/BasicDnD",
+        templateUrl: "views/basicDnD.html",
+        controller: 'BasicDnDCtrl',
+      });
     });
 
 })();

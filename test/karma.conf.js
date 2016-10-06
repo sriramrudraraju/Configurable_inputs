@@ -36,6 +36,7 @@
        'bower_components/angular-messages/angular-messages.js',
        'bower_components/angular-material/angular-material.js',
        'bower_components/toastr/toastr.js',
+       'bower_components/angular-drag-and-drop-lists/angular-drag-and-drop-lists.js',
        'bower_components/angular-mocks/angular-mocks.js',
        // endbower
 //       'app/scripts/**/*.js',
@@ -116,6 +117,7 @@ module.exports = function(config) {
       'bower_components/angular-messages/angular-messages.js',
       'bower_components/angular-material/angular-material.js',
       'bower_components/toastr/toastr.js',
+      'bower_components/angular-drag-and-drop-lists/angular-drag-and-drop-lists.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',
