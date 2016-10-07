@@ -40,7 +40,17 @@
         url: "/BasicDnD",
         templateUrl: "views/basicDnD.html",
         controller: 'BasicDnDCtrl',
-      });
+      })
+        .state('AdvancedDnD', {
+          url: "/AdvancedDnD",
+          templateUrl: "views/advancedDnD.html",
+          controller: 'AdvancedDnDCtrl',
+        })
+        .state('ConfigurableDnD', {
+          url: "/ConfigurableDnD",
+          templateUrl: "views/configurableDnD.html",
+          controller: 'ConfigurableDnDCtrl',
+        });
     });
 
 })();

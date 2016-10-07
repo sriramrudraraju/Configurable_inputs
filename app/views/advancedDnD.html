@@ -1,0 +1,62 @@
+<div ng-repeat="containers in model" class="advancedDemo">
+  <div  class="dropzone">
+    <h3>{{containers.label}}</h3>
+    <ul dnd-list="containers.people"
+        dnd-allowed-types="containers.allowedTypes"
+        dnd-horizontal-list="true"
+        dnd-external-sources="true"
+        dnd-disable-if="false"
+        class="itemlist">
+      <li ng-repeat="item in containers.people"
+          dnd-draggable="item"
+          dnd-type="item.type"
+          dnd-moved="containers.people.splice($index, 1); logEvent('Item moved', event)"
+          class="itemlist">
+        <div ng-switch="item.inputType" ng-show="item.show">
+          <div ng-switch-when="text" class="{{item.classs}}">
+            <form name="form">
+              <div layout="row">
+                <md-input-container flex="100">
+                  <label>{{item.name}}</label>
+                  <input type="{{item.inputType}}"
+                         ng-model="value[$index]"
+                         ng-required="item.required"
+                         ng-pattern="item.pattern"
+                         ng-disabled="item.disabled">
+                  <div ng-messages="form.$error">
+                    <div ng-message="required">This is required.</div>
+                    <div ng-message="pattern">{{item.patternMessage}}</div>
+                  </div>
+                </md-input-container>
+              </div>
+            </form>
+          </div>
+          <div ng-switch-when="number" class="{{item.classs}}">
+            <form name="form">
+              <div layout="row">
+                <md-input-container flex="100">
+                  <label>{{item.name}}</label>
+                  <input type="{{item.inputType}}"
+                         ng-model="value[$index]"
+                         ng-required="item.required"
+                         ng-disabled="item.disabled">
+                  <div ng-messages="form.$error">
+                    <div ng-message="required">This is required.</div>
+                  </div>
+                </md-input-container>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </li>
+      <li class="dndPlaceholder">
+        Drop any <strong>{{containers.allowedTypes.join(' or ')}}</strong> here
+      </li>
+    </ul>
+  </div>
+</div>
+<h2>Generated Model</h2>
+<pre>{{modelAsJson}}</pre>
+
+

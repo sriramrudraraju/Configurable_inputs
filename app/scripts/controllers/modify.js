@@ -7,9 +7,10 @@
   function ModifyCtrl($scope, inputConfigsFactory) {
 
     $scope.inputFields = inputConfigsFactory.getVal();
-    
+
     //watch changes in inputFields
     $scope.$watch('inputFields', function(newValue, oldValue) {
+      debugger;
       for(var i=0; i<newValue.length; i++){
         if(newValue[i].required == true && newValue[i].show == false){
           //  throw error saying.. required need to be displayed

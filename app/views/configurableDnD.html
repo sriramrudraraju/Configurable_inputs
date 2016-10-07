@@ -1,0 +1,128 @@
+
+
+
+
+<div ng-repeat="containers in model" class="advancedDemo">
+  <div  class="dropzone" style="background-color: whitesmoke">
+    <h3>{{containers.label}}</h3>
+    <ul dnd-list="containers.inputs"
+        dnd-allowed-types="containers.allowedTypes"
+        dnd-horizontal-list="true"
+        dnd-external-sources="true"
+        dnd-disable-if="toggleDnDmode"
+        class="itemlist">
+      <li ng-repeat="item in containers.inputs"
+          dnd-draggable="item"
+          dnd-type="item.type"
+          dnd-moved="containers.inputs.splice($index, 1); logEvent('Item moved', event)"
+          class="itemlist"
+          ng-show="item.show">
+        <div ng-switch="item.inputType" >
+          <div ng-switch-when="text" class="{{item.classs}}">
+            <form name="form">
+              <div layout="row">
+                <md-input-container flex="100">
+                  <label>{{item.name}}</label>
+                  <input type="{{item.inputType}}"
+                         ng-model="item.model"
+                         ng-required="item.required"
+                         ng-pattern="item.pattern"
+                         ng-disabled="item.disabled">
+                  <div ng-messages="form.$error">
+                    <div ng-message="required">This is required.</div>
+                    <div ng-message="pattern">{{item.patternMessage}}</div>
+                  </div>
+                </md-input-container>
+              </div>
+            </form>
+          </div>
+          <div ng-switch-when="number" class="{{item.classs}}">
+            <form name="form">
+              <div layout="row">
+                <md-input-container flex="100">
+                  <label>{{item.name}}</label>
+                  <input type="{{item.inputType}}"
+                         ng-model="item.model"
+                         ng-required="item.required"
+                         ng-disabled="item.disabled">
+                  <div ng-messages="form.$error">
+                    <div ng-message="required">This is required.</div>
+                  </div>
+                </md-input-container>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </li>
+      <li class="dndPlaceholder">
+        Drop any <strong>{{containers.allowedTypes.join(' or ')}}</strong> here
+      </li>
+    </ul>
+  </div>
+</div>
+<div>
+  <md-button  ng-click="toggleDnDmode = !toggleDnDmode" ng-init="toggleDnDmode = true" class="md-primary md-raised">
+    Click to Button to Drag and Drop Mode : {{toggleDnDmode}}</md-button>
+
+  <md-button class="md-primary md-raised" ng-click="showAdvanced($event)">
+    Alert Dialog
+  </md-button>
+</div>
+
+
+<h2>Generated Model</h2>
+<pre>{{modelAsJson}}</pre>
+
+
+<script type="text/ng-template" id="dialog1.tmpl.html"><md-dialog aria-label="Mango (Fruit)">
+<form ng-cloak>
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>Configure Inputs</h2>
+      <span flex></span>
+    </div>
+  </md-toolbar>
+
+  <md-dialog-content>
+    <table class="table" style="width:60vw">
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Display</th>
+        <th>Required</th>
+        <th>Disable</th>
+      </tr>
+      </thead>
+      <tbody ng-repeat="containers in model" class="advancedDemo">
+      <tr >
+      <th>{{containers.label}}</th>
+      </tr>
+      <tr ng-repeat="field in containers.inputs" class="advancedDemo">
+        <td scope="row">{{field.name}}</td>
+        <td>
+          <md-checkbox ng-model="field.show" aria-label="Checkbox 1"></md-checkbox>
+        </td>
+        <td>
+          <md-checkbox ng-model="field.required" aria-label="Checkbox 1"></md-checkbox>
+        </td>
+        <td>
+          <md-checkbox ng-model="field.disabled" aria-label="Checkbox 1"></md-checkbox>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </md-dialog-content>
+
+  <md-dialog-actions layout="row">
+
+    <span flex></span>
+    <md-button ng-click="answer(model)">
+      Ok
+    </md-button>
+  </md-dialog-actions>
+</form>
+</md-dialog>
+</script>
+
+
