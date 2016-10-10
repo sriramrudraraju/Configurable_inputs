@@ -5,7 +5,7 @@
     .controller('CreateCtrl', CreateCtrl);
 
   function CreateCtrl($scope,inputConfigsFactory) {
-    $scope.lol = 'lol';
+    $scope.lol = 'lol'; //just sample ;)
 
     $scope.inputConfig= {};
 
@@ -14,6 +14,7 @@
     toastr.options.closeDuration = 300;
     toastr.options.closeEasing = 'swing';
 
+    //on-click add input, send those values to create custom input
     $scope.addInput = function(data){
       //send this data to factory to append to array of inputs
       inputConfigsFactory.addVal( {

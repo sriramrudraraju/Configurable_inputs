@@ -2,6 +2,7 @@
  * Created by Sriram on 6/14/2016.
  */
 
+//sample service syntax
 'use strict';
 
 (function() {

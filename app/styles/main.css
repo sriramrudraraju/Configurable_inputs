@@ -113,3 +113,7 @@
 .name {
   margin-left: 20px;
 }
+
+.dropzone {
+  background-color: whitesmoke;
+}

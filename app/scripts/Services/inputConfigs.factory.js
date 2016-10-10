@@ -7,6 +7,8 @@
 
 
   function inputConfigsFactory() {
+
+    //mocked input stats
     var self = [
       {
         pattern: "/^[a-z]+$/i",
@@ -52,9 +54,8 @@
       return match && new RegExp(match[1], match[2]);
     }
 
-
-
-  self.getConvertedPatternVal = function() {
+    //to get converted RegEx inputs
+    self.getConvertedPatternVal = function() {
       for(var i=0; i<self.length; i++){
         //convert only when pattern is available
         if(self[i].pattern){
@@ -64,14 +65,17 @@
       return self;
     }
 
+    //to get inputs without any conversion of RegEx
     self.getVal = function() {
       return self;
     }
 
+    //add inputs to the array
     self.addVal = function(val) {
       self.push(val);
     }
 
+    //update the input stats
     self.updateVal = function(val) {
       self = val;
     }

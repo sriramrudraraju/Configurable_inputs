@@ -32,15 +32,16 @@
     <div class="header">
     </div>
 
+    <md-nav-bar  nav-bar-aria-label="navigation links">
+      <md-nav-item md-nav-click="goto('page1')" name="page1" ui-sref="Create">Create</md-nav-item>
+      <md-nav-item md-nav-click="goto('page2')" name="page2" ui-sref="Inputs">Inputs</md-nav-item>
+      <md-nav-item md-nav-click="goto('page3')" name="page3" ui-sref="Modify">Modify</md-nav-item>
+      <md-nav-item md-nav-click="goto('page4')" name="page4" ui-sref="BasicDnD">Basic DnD</md-nav-item>
+      <md-nav-item md-nav-click="goto('page5')" name="page5" ui-sref="AdvancedDnD">Advanced DnD</md-nav-item>
+      <md-nav-item md-nav-click="goto('page6')" name="page6" ui-sref="ConfigurableDnD">Configurable DnD</md-nav-item>
+    </md-nav-bar>
+
     <div class="container-fluid">
-      <nav>
-        <a style="padding: 0 2% 0 0;" ui-sref="Create">Create</a>
-        <a style="padding: 0 2% 0 0;" ui-sref="Inputs">Inputs</a>
-        <a style="padding: 0 2% 0 0;" ui-sref="Modify">Modify</a>
-        <a style="padding: 0 2% 0 0;" ui-sref="BasicDnD">Basic DnD</a>
-        <a style="padding: 0 2% 0 0;" ui-sref="AdvancedDnD">Advanced DnD</a>
-        <a style="padding: 0 2% 0 0;" ui-sref="ConfigurableDnD">Configurable DnD</a>
-      </nav>
     <div ui-view></div>
     </div>
 

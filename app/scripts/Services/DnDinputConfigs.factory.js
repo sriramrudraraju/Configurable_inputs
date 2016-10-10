@@ -7,6 +7,8 @@
 
 
   function DnDinputConfigsFactory() {
+    
+    //mocked input stats
     var dndInputs = [
       {
         label: "Top",
@@ -157,7 +159,7 @@
     }
 
 
-
+    //to get converted RegEx inputs
     dndInputs.getConvertedPatternVal = function() {
       for(var j=0; j<dndInputs.length; j++){
         for(var i=0; i<dndInputs[j].inputs.length; i++){
@@ -171,14 +173,17 @@
       return dndInputs;
     }
 
+    //to get inputs without any conversion of RegEx
     dndInputs.getVal = function() {
       return dndInputs;
     }
 
+    //add inputs, if any
     dndInputs.addVal = function(val) {
       dndInputs.push(val);
     }
 
+    //update the input stats
     dndInputs.updateVal = function(val) {
       dndInputs = val;
     }

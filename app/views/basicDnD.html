@@ -1,6 +1,7 @@
 <div ng-repeat="containers in model" class="advancedDemo">
   <div  class="dropzone">
     <h3>{{containers.label}}</h3>
+    <!--the fields that can be drag and dropped-->
     <ul dnd-list="containers.people"
         dnd-allowed-types="containers.allowedTypes"
         dnd-horizontal-list="true"

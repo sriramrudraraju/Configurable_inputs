@@ -5,7 +5,9 @@
 
 <div class="col-md-12">
   <div ng-repeat="field in fields">
+    <!--switch the input fields based on input type-->
     <div ng-switch="field.type" ng-show="field.show">
+      <!--text type input-->
       <div ng-switch-when="text" class="{{field.classs}}">
         <form name="form">
           <div layout="row">
@@ -24,6 +26,7 @@
           </div>
         </form>
       </div>
+      <!--text type number-->
       <div ng-switch-when="number" class="{{field.classs}}">
         <form name="form">
           <div layout="row">

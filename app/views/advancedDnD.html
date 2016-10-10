@@ -1,6 +1,7 @@
 <div ng-repeat="containers in model" class="advancedDemo">
   <div  class="dropzone">
     <h3>{{containers.label}}</h3>
+    <!--the fields that can be drag and dropped-->
     <ul dnd-list="containers.people"
         dnd-allowed-types="containers.allowedTypes"
         dnd-horizontal-list="true"
@@ -10,9 +11,11 @@
       <li ng-repeat="item in containers.people"
           dnd-draggable="item"
           dnd-type="item.type"
-          dnd-moved="containers.people.splice($index, 1); logEvent('Item moved', event)"
+          dnd-moved="containers.people.splice($index, 1)"
           class="itemlist">
+        <!--switch the input fields based on input type-->
         <div ng-switch="item.inputType" ng-show="item.show">
+          <!--text type input-->
           <div ng-switch-when="text" class="{{item.classs}}">
             <form name="form">
               <div layout="row">
@@ -31,6 +34,7 @@
               </div>
             </form>
           </div>
+          <!--input type input-->
           <div ng-switch-when="number" class="{{item.classs}}">
             <form name="form">
               <div layout="row">
@@ -50,6 +54,7 @@
         </div>
         <div class="clearfix"></div>
       </li>
+      <!--background shadow part for drag and drop-->
       <li class="dndPlaceholder">
         Drop any <strong>{{containers.allowedTypes.join(' or ')}}</strong> here
       </li>

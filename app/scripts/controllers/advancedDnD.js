@@ -9,6 +9,7 @@
 
   function AdvancedDnDCtrl($scope, inputConfigsFactory) {
 
+    //mocked up data for display
     $scope.model= [
       {
         label: "Top",
@@ -149,6 +150,7 @@
       }
     ];
 
+    //$watch changing $model and display on screen 
     $scope.$watch('model', function(model) {
       $scope.modelAsJson = angular.toJson(model, true);
     }, true);

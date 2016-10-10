@@ -8,6 +8,8 @@
     .controller('BasicDnDCtrl', BasicDnDCtrl); //main controller for modify.html
 
   function BasicDnDCtrl($scope, inputConfigsFactory) {
+    
+    //mocked up data for model
     $scope.model= [
       {
         "label": "Men",
@@ -87,6 +89,7 @@
       }
     ];
 
+    ////$watch changing $model and display on screen
     $scope.$watch('model', function(model) {
       $scope.modelAsJson = angular.toJson(model, true);
     }, true);

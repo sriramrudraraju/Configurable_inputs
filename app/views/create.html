@@ -7,8 +7,8 @@
 
 <div class="col-md-12">
   <div class="col-md-6">
+    <!--Create custom input-->
     <div layout="column" ng-cloak="" class="inputdemoErrors" >
-
       <md-content layout-padding="">
         <form name="projectForm">
 
@@ -93,7 +93,9 @@
   <div class="col-md-6">
     <!--preview side-->
     <h2>Preview</h2>
+    <!--switch the input fields based on input type-->
     <div ng-switch="inputConfig.inputType" ng-show="inputConfig.showValue">
+      <!--text type input-->
       <div ng-switch-when="text" class="{{inputConfig.classs}}">
         <form name="form">
           <div layout="row">
@@ -110,6 +112,7 @@
           </div>
         </form>
       </div>
+      <!--input type input-->
       <div ng-switch-when="number" class="{{inputConfig.classs}}">
         <form name="form" ng-show="inputConfig.showValue">
           <div layout="row">
